@@ -5,6 +5,7 @@ import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
 import { ExpenseChart } from './components/ExpenseChart';
 import { GlobalProvider } from './context/GlobalState';
+import ThreeScene  from './components/ThreeScene'; 
 import './App.css';
 
 function App() {
@@ -22,7 +23,14 @@ function App() {
 
             {/* Right Column: Chart + Transaction List */}
             <div className="col-span-1 md:col-span-2 flex flex-col space-y-6 h-full bg-white/80 dark:bg-gray-900/80 rounded-3xl shadow-xl p-6 backdrop-blur-md border border-gray-200 dark:border-gray-800 min-h-[700px]">
-              <ExpenseChart />
+              <div className="flex flex-col md:flex-row gap-4 w-full">
+  <div className="w-full md:w-1/2 flex justify-center items-center">
+    <ThreeScene />
+  </div>
+  <div className="w-full md:w-1/2">
+    <ExpenseChart />
+  </div>
+</div>
               <TransactionList />
             </div>
           </div>
